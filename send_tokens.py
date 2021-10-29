@@ -31,7 +31,7 @@ def send_tokens(receiver_pk, tx_amount):
     last_valid_round = params.last
 
     # Your code here
-    if tx_amount > min_balance:
+    if tx_amount < min_balance:
 
         private_key_sender, sender_pk = account.generate_account()
         # mnemonic_secret = "skirting trash phase buckets apology gags sedan coffee vinegar else " \
