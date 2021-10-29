@@ -17,6 +17,12 @@ headers = {
 acl = algod.AlgodClient(algod_token, algod_address, headers)
 min_balance = 100000  # https://developer.algorand.org/docs/features/accounts/#minimum-balance
 
+mnemonic_secret = "mango dose actual erode elevator scout fatal kiwi library hill stand" \
+                  " daughter base issue note element false wink economy skate allow " \
+                  "twist photo absent river"
+sk = mnemonic.to_private_key(mnemonic_secret)
+pk = mnemonic.to_public_key(mnemonic_secret)
+
 '''
 Your function should create a transaction that sends “amount” microalgos 
 to the account given by “receiver_pk” and submit the transaction to the Algorand Testnet.
@@ -41,13 +47,9 @@ def send_tokens(receiver_pk, tx_amount):
     '''
     # private_key_sender, sender_pk = account.generate_account()
     # mnemonic_secret = mnemonic.from_private_key(private_key_sender)
-    sender_pk = "OWTQBcj0IwVzansI7BqpfXOJ2tWyR5LyfoygXAOud7Rndrn7zNzOcqPih1F/Te3n23LpTYPB6yCLpZSH83pKTA=="
+    sender_pk = "OWTQBcj0IwVzansI7BqpfXOJ2tWyR5LyfoygXAOud7Rndrn7zNzOcqPih1F/Te3n23LpTY" \
+                "PB6yCLpZSH83pKTA=="
 
-    mnemonic_secret = "mango dose actual erode elevator scout fatal kiwi library hill stand daughter base issue note " \
-                      "element false wink economy skate allow twist photo absent river"
-
-    sk = mnemonic.to_private_key(mnemonic_secret)
-    pk = mnemonic.to_public_key(mnemonic_secret)
     # print("Sender: " + str(private_key_sender))
     # print("SenderAddress: " + str(sender_pk))
     # print("secret: " + str(mnemonic_secret))
