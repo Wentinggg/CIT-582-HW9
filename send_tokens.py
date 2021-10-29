@@ -33,6 +33,7 @@ def send_tokens(receiver_pk, tx_amount):
     # Your code here
 
     private_key_sender, sender_pk = account.generate_account()
+    print(private_key_sender)
     mnemonic_secret = mnemonic.from_private_key(private_key_sender)
     sk = mnemonic.to_private_key(mnemonic_secret)
     pk = mnemonic.to_public_key(mnemonic_secret)
