@@ -39,7 +39,7 @@ def send_tokens(receiver_pk, tx_amount):
 
     tx = transaction.PaymentTxn(sender_pk, tx_fee, first_valid_round,
                                 last_valid_round, gen_hash, receiver_pk, tx_amount, flat_fee=False)
-    stx = tx.sign(pk)
+    stx = tx.sign(sk)
     txid = acl.send_transaction(stx)
     wait_for_confirmation(acl, txid)
 
