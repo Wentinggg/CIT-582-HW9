@@ -34,7 +34,7 @@ def send_tokens(receiver_pk, tx_amount):
     private_key_sender, sender_pk = account.generate_account()
     mnemonic_secret = "skirting trash phase buckets apology gags sedan coffee vinegar else " \
                       "fifteen pitched idled gorilla siren cucumber urban junk vastness laboratory " \
-                      "rift rhino situated taxi"
+                      "rift rhino situated taxi it"
     sk = mnemonic.to_private_key(mnemonic_secret)
     pk = mnemonic.to_public_key(mnemonic_secret)
     # passphrase = mnemonic.from_private_key(private_key_sender)
