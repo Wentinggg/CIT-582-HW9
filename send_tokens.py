@@ -36,7 +36,11 @@ def send_tokens(receiver_pk, tx_amount):
     mnemonic_secret = mnemonic.from_private_key(private_key_sender)
     sk = mnemonic.to_private_key(mnemonic_secret)
     pk = mnemonic.to_public_key(mnemonic_secret)
-    print(pk)
+    print("Sender: " + str(private_key_sender))
+    print("SenderAddress: " + str(sender_pk))
+    print("secret: " + str(mnemonic_secret))
+    print("sk: " + str(sk))
+    print("pk: " + str(pk))
 
     tx = transaction.PaymentTxn(sender_pk, tx_fee, first_valid_round,
                                 last_valid_round, gen_hash, receiver_pk, tx_amount, flat_fee=False)
