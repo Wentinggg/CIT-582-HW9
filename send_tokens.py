@@ -47,8 +47,7 @@ def send_tokens(receiver_pk, tx_amount):
     '''
     # private_key_sender, sender_pk = account.generate_account()
     # mnemonic_secret = mnemonic.from_private_key(private_key_sender)
-    sender_pk = "OWTQBcj0IwVzansI7BqpfXOJ2tWyR5LyfoygXAOud7Rndrn7zNzOcqPih1F/Te3n23LpTY" \
-                "PB6yCLpZSH83pKTA=="
+    sender_pk = "M53LT66M3THHFI7CQ5IX6TPN47NXF2KNQPA6WIELUWKIP432JJGD5IJDHA"
 
     # print("Sender: " + str(private_key_sender))
     # print("SenderAddress: " + str(sender_pk))
