@@ -43,6 +43,8 @@ def verify():
         if eth_account.Account.recover_message(eth_encoded_msg, signature=sig) == pk:
             # print("Eth sig verifies!")
             return jsonify(result)
+        else:
+            return jsonify(False)
 
     if platform == 'Algorand':
         # payload = "Sign this!"
@@ -53,6 +55,8 @@ def verify():
         if algosdk.util.verify_bytes(message.encode('utf-8'), sig, pk):
             # print("Algo sig verifies!")
             return jsonify(result)
+        else:
+            return jsonify(False)
 
     # Check if signature is valid
     result = False  # Should only be true if signature validates
