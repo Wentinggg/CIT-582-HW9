@@ -18,6 +18,7 @@ Your endpoint should accept both signatures generated from Ethereum and Algorand
 @app.route('/verify', methods=['GET', 'POST'])
 def verify():
     content = request.get_json(silent=True)
+    print(content)
 
     # content = json.dumps(content)
     sig = content['sig']
