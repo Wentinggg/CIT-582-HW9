@@ -21,7 +21,7 @@ def verify():
 
     # content = json.dumps(content)
     sig = content['sig']
-    message = content['payload']
+    message = content['payload']['message']
     pk = content['payload']['pk']
     platform = content['payload']['platform']
     # print('Sig: ' + str(sig) + '\nMessage: ' + str(message) + '\npk: ' + str(pk) + '\nplatform: ' + str(platform))
