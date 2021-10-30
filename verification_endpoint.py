@@ -17,42 +17,42 @@ Your endpoint should accept both signatures generated from Ethereum and Algorand
 
 @app.route('/verify', methods=['GET', 'POST'])
 def verify():
-    content = request.get_json(silent=True)
+#     content = request.get_json(silent=True)
 
-    # content = json.dumps(content)
-    sig = content['sig']
-    message = content['payload']['message']
-    pk = content['payload']['pk']
-    platform = content['payload']['platform']
-    # print('Sig: ' + str(sig) + '\nMessage: ' + str(message) + '\npk: ' + str(pk) + '\nplatform: ' + str(platform))
+#     # content = json.dumps(content)
+#     sig = content['sig']
+#     message = content['payload']['message']
+#     pk = content['payload']['pk']
+#     platform = content['payload']['platform']
+#     # print('Sig: ' + str(sig) + '\nMessage: ' + str(message) + '\npk: ' + str(pk) + '\nplatform: ' + str(platform))
 
-    result = True
-    if platform == 'Ethereum':
-        # eth_account.Account.enable_unaudited_hdwallet_features()
-        # acct, mnemonic = eth_account.Account.create_with_mnemonic()
+#     result = True
+#     if platform == 'Ethereum':
+#         # eth_account.Account.enable_unaudited_hdwallet_features()
+#         # acct, mnemonic = eth_account.Account.create_with_mnemonic()
 
-        # eth_pk = acct.address
-        # eth_sk = acct.key
+#         # eth_pk = acct.address
+#         # eth_sk = acct.key
 
-        # payload = "Sign this!"
+#         # payload = "Sign this!"
 
-        eth_encoded_msg = eth_account.messages.encode_defunct(text=message)
-        # eth_sig_obj = eth_account.Account.sign_message(eth_encoded_msg, eth_sk)
+#         eth_encoded_msg = eth_account.messages.encode_defunct(text=message)
+#         # eth_sig_obj = eth_account.Account.sign_message(eth_encoded_msg, eth_sk)
 
-        # print(eth_sig_obj.messageHash)
-        if eth_account.Account.recover_message(eth_encoded_msg, signature=sig) == pk:
-            # print("Eth sig verifies!")
-            return jsonify(True)
+#         # print(eth_sig_obj.messageHash)
+#         if eth_account.Account.recover_message(eth_encoded_msg, signature=sig) == pk:
+#             # print("Eth sig verifies!")
+#             return jsonify(True)
 
-    if platform == 'Algorand':
-        # payload = "Sign this!"
+#     if platform == 'Algorand':
+#         # payload = "Sign this!"
 
-        # algo_sk, algo_pk = algosdk.account.generate_account()
-        # algo_sig_str = algosdk.util.sign_bytes(message.encode('utf-8'), algo_sk)
+#         # algo_sk, algo_pk = algosdk.account.generate_account()
+#         # algo_sig_str = algosdk.util.sign_bytes(message.encode('utf-8'), algo_sk)
 
-        if algosdk.util.verify_bytes(message.encode('utf-8'), sig, pk):
-            # print("Algo sig verifies!")
-            return jsonify(result)
+#         if algosdk.util.verify_bytes(message.encode('utf-8'), sig, pk):
+#             # print("Algo sig verifies!")
+#             return jsonify(result)
 
     # Check if signature is valid
     result = False  # Should only be true if signature validates
