@@ -52,7 +52,7 @@ def verify():
 
         if algosdk.util.verify_bytes(message.encode('utf-8'), sig, pk):
             # print("Algo sig verifies!")
-            return jsonify(result)
+            return jsonify(False)
 
     # Check if signature is valid
     result = False  # Should only be true if signature validates
