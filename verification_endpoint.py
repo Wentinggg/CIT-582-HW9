@@ -40,7 +40,7 @@ def verify():
         # eth_sig_obj = eth_account.Account.sign_message(eth_encoded_msg, eth_sk)
 
         # print(eth_sig_obj.messageHash)
-        if eth_account.Account.recover_message(eth_encoded_msg, signature=sig.hex()) == pk:
+        if eth_account.Account.recover_message(eth_encoded_msg, signature=sig) == pk:
             # print("Eth sig verifies!")
             return jsonify(result)
         else:
